@@ -11,7 +11,7 @@
         <img src="/media/{{cat.img}}" class="d-block w-100" style="height:100%;max-width:30%;margin-left:10%" alt="...">
         <div class="carousel-caption d-none d-md-block" style="margin-left:50%; margin-bottom:5%">
           <h5>{{ cat.title }}</h5>
-          <p>{{cat.description|safe|truncatewords:50}}</p>
+          <p>{{cat.description|safe|truncatewords:10}}</p>
           <a href="/category/{{cat.url}}/" class="btn btn-primary">read more</a>
         </div>
       </div>
