@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BlogBuster</title>
+        <style>table, th, td {
+            border: 1px solid black;
+          }
+        /* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled {
+  background-color: #cbbcb1;
+}
+
+.mask-custom {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, .15);
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+}
+
+
+
+
+        </style>
+
+
+        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({
+      selector: "textarea.tinymce", // Updated selector to match the class in your HTML
+      plugins: "casechange advcode advlist lists spellchecker formatpainter autoresize visualblocks tinydrive image link media imagetools wordcount",
+      min_height: 380,
+      menubar: false,
+      toolbar: [
+        "bold italic underline | forecolor | formatselect | alignleft aligncenter alignright | bullist numlist",
+        "cut copy paste formatpainter removeformat | casechange visualblocks | spellchecker | code"
+      ]
+    });
+  </script>
+
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+    <body>
+        
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 ">
+              <div class="container">
+                <a class="navbar-brand" href="#!"><span style="color: #5e9693;">Blog</span><span style="color: #fff;">buster</span></a>
+                
+                <div id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/About/" style='color:white'>about</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style='color:white'>
+                        category
+                      </a>
+                      <ul class="dropdown-menu">
+                        {% for cat in category %}
+                        <li><a class="dropdown-item" href="/category/{{cat.url}}/">{{cat.title}}</a></li>
+                        {% endfor %}
+                        
+                        
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Login/" style='color:white'>admin</a>
+                      </li>
+                  </ul>
+                  <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item me-3 me-lg-0">
+                      <a class="nav-link" href="#!">
+                        <i class="fas fa-shopping-cart"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-0">
+                      <a class="nav-link" href="#!">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-0">
+                      <a class="nav-link" href="#!">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <!-- Navbar -->
+          
+            <!--Section: Design Block-->
+            <section>
+              <!-- Intro -->
+              <div id="intro" class="bg-image vh-100" style="
+                    background-image: url('https://img.freepik.com/free-photo/abstract-textured-backgound_1258-30461.jpg?size=626&ext=jpg&ga=GA1.1.1822520614.1699525054&semt=ais');
+                    
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  
+  overflow-x: hidden;
+  background-attachment: fixed;
+  ">
+  
+
+        {% block content %}
+        {% endblock %}
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script>
+           console.log('hello world')
+        </script>
+</body>
+</html>

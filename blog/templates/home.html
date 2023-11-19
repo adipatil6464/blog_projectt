@@ -1,0 +1,68 @@
+{% include "base.html" %}
+{% block content %}
+
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style='margin-top:100px;'>
+    <div class="carousel-inner">
+        {% for cat in category %}
+        
+        
+      <div class="carousel-item active" style="background:black;height:300px;max-width:auto;">
+        <img src="/media/{{cat.img}}" class="d-block w-100" style="height:100%;max-width:30%;margin-left:10%" alt="...">
+        <div class="carousel-caption d-none d-md-block" style="margin-left:50%; margin-bottom:5%">
+          <h5>{{ cat.title }}</h5>
+          <p>{{cat.description|safe|truncatewords:50}}</p>
+          <a href="/category/{{cat.url}}/" class="btn btn-primary">read more</a>
+        </div>
+      </div>
+
+      {% endfor %}
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  
+  
+  <div class='container-fluid' style="display: flex; align-items: center; justify-content: center; height: 100vh; margin-top:250px; padding-bottom:10px">
+    <div style="width: 70%;">
+      {% for p in post %}
+        <div class="card mb-3" style="background-color: black; color: white;">
+          <div class="card-header" style="color: #5e9693;">
+            <b>{{ p.cat }}</b>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="/media/{{p.img}}" class="img-fluid">
+              </div>
+              <div class="col-md-8">
+                <h5 class="card-title">{{ p.title }}</h5>
+                <p class="card-text">{{ p.content|safe|truncatewords:50 }}</p>
+                <a href="/blog/{{p.url}}/" class="btn btn-primary">read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+</div>
+
+  
+</div>
+<!-- Intro -->
+
+</section>
+<!--Section: Design Block-->
+            
+
+
+{% endblock %}
