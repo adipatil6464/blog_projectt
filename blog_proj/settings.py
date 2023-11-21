@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i^pyn@08+qc_gpq6p9$hrt@fk=zp2$vzn@$v+3q=1#_y%ui@fx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blogbuster-0m19.onrender.com']
 
 
 # Application definition
